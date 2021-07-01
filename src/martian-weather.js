@@ -10,16 +10,24 @@ export default class MartianWeather {
       .then(function (response) {
         const temperature = response['675'].AT.av;
         console.log(temperature);
-        const atomosphericPressure = response['675'].PRE.av;
-        console.log(atomosphericPressure);
+        const atmosphericPressure = response['675'].PRE.av;
+        console.log(atmosphericPressure);
         const windDirection = response['675'].WD.most_common.compass_degrees; 
         console.log(windDirection);
         const windSpeed = response['675'].HWS.av; 
         console.log(windSpeed);
+        return {
+          temperature,
+          atmosphericPressure,
+          windDirection,
+          windSpeed
+        };
+
       })
       .catch(function(error){
         console.error(`Alert! We have an error: ${error.message}`);
       });
+
   }
 }
 
