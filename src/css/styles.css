@@ -11,3 +11,26 @@ dt {
 dd {
   margin: 0;
 }
+
+.compass {
+  position: relative;
+
+  width: 80px;
+  height: 80px;
+
+  border: 2px solid black;
+  border-radius: 100%;
+
+  display: none;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 50%;
+  height: 2px;
+
+  background-color: black;
+  transform-origin: left;
+}

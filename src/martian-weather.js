@@ -18,7 +18,11 @@ export default class MartianWeather {
         const atmosphericPressure = response[firstDay].PRE.av; // notice the element is a string here
         const windDirection = response[firstDay].WD.most_common.compass_degrees; //^^ and here
         const windSpeed = response[firstDay].HWS.av; 
-        const date = response[firstDay].First_UTC;
+        const date = new Date(response[firstDay].First_UTC);
+
+        //toDateString()
+        //toTimeString()
+        
 
         console.log(response);
         console.log(temperature);
@@ -32,7 +36,8 @@ export default class MartianWeather {
           atmosphericPressure,
           windDirection,
           windSpeed,
-          date,
+          date: date.toDateString(),
+          time: date.toTimeString(),
         };
 
       })
