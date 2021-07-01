@@ -1,0 +1,13 @@
+.output-area {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+}
+
+dt {
+  text-align: right;
+}
+
+dd {
+  margin: 0;
+}

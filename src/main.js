@@ -5,5 +5,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './css/styles.css';
 
 
-$('#').click(function() {
+$('#weatherLocation').click(function() {
+  MartianWeather.getMartianWeather();
 });

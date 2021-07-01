@@ -4,13 +4,28 @@
   <title>Martian News Service</title>
 </head>
 <body>
-  <div class="container">
+  <header class="container">
     <h1>Get Weather Conditions From Mars!</h1>
-    <label for="location">Enter a location:</label>
-    <input id="location" type="text">
-    <button class="btn-success" id="weatherLocation">Get Current Weatjer</button>
-    <div class="showErrors"></div>
-    <div class="showHumidity"></div>
-  </div>
+  </header>
+
+  <main class="container">
+    <div class="form-inline">
+      <button class="btn btn-success" id="weatherLocation">Get Current Weather</button>
+    </div>
+
+    <dl class="output-area my-3">
+      <dt>Temperature</dt>
+      <dd id="#output-temperature"></dd>
+
+      <dt>Pressure</dt>
+      <dd id="#output-pressure"></dd>
+      
+      <dt>Wind Speed</dt>
+      <dd id="#output-wind-speed"></dd>
+
+      <dt>Wind Direction</dt>
+      <dd id="#output-wind-direction"></dd>
+    </dl>
+  </main>
 </body>
 </html>
