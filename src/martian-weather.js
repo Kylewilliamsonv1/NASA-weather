@@ -8,19 +8,31 @@ export default class MartianWeather {
         return response.json();
       })
       .then(function (response) {
-        const temperature = response['675'].AT.av;
+        const firstDay = response.sol_keys[0]; // 675
+
+        // these are the same, if 675 is our first day
+        // const temperature = response[firstDay].AT.av;
+        // const temperature = response[675].AT.av;
+
+        const temperature = response[firstDay].AT.av; //first day/675 (675 represents a day) represent the element in the array
+        const atmosphericPressure = response[firstDay].PRE.av; // notice the element is a string here
+        const windDirection = response[firstDay].WD.most_common.compass_degrees; //^^ and here
+        const windSpeed = response[firstDay].HWS.av; 
+        const date = response[firstDay].First_UTC;
+
+        console.log(response);
         console.log(temperature);
-        const atmosphericPressure = response['675'].PRE.av;
         console.log(atmosphericPressure);
-        const windDirection = response['675'].WD.most_common.compass_degrees; 
         console.log(windDirection);
-        const windSpeed = response['675'].HWS.av; 
         console.log(windSpeed);
+        console.log(date);
+
         return {
           temperature,
           atmosphericPressure,
           windDirection,
-          windSpeed
+          windSpeed,
+          date,
         };
 
       })

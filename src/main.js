@@ -6,12 +6,11 @@ import './css/styles.css';
 
 $('#weatherLocation').click(function() {
   MartianWeather.getMartianWeather().then(function (formattedData) {
-    console.log('did we get here?', formattedData)
 
+    $("#output-start-date").text(formattedData.date);
     $("#output-temperature").text(formattedData.temperature);
     $("#output-pressure").text(formattedData.atmosphericPressure);
     $("#output-wind-speed").text(formattedData.windSpeed);
     $("#output-wind-direction").text(formattedData.windDirection);
   });
-
 });
