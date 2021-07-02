@@ -14,7 +14,7 @@ $('#weatherLocation').click(function() {
     $("#output-wind-speed").text(formattedData.windSpeed + " m/s");
     $("#output-wind-direction").text(formattedData.windDirection + " deg");
 
-    $('.compass').show()
+    $('.compass').show();
     $('.compass .arrow').css('transform', `rotate(${formattedData.windDirection - 90}deg)`);
   });
 });
